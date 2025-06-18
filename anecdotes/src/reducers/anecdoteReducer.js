@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
   console.log('action', action)
 
   switch(action.type) {
-    
+
     case 'NEW_ANECDOTE': 
       return [...state, action.payload]
     
@@ -38,7 +38,9 @@ const reducer = (state = initialState, action) => {
         votes: anecdoteToChange.votes + 1
       }
 
-      return state.map(anecdote => anecdote.id !== id ? anecdote : changedAnecdote)
+      return state
+        .map(anecdote => anecdote.id !== id ? anecdote : changedAnecdote)
+        .sort((a, b) => b.votes - a.votes)
     }
     
     default:
