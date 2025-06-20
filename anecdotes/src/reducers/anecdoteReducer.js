@@ -30,7 +30,7 @@ const anecdoteSlice = createSlice({
       state.push({
         content,
         id: getId(),
-        votes: 1
+        votes: 0
       })
     },
     vote(state, action) {
