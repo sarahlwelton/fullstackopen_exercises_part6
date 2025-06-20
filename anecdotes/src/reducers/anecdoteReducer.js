@@ -30,7 +30,7 @@ const anecdoteSlice = createSlice({
       state.push({
         content,
         id: getId(),
-        votes: 0
+        votes: 1
       })
     },
     vote(state, action) {
@@ -45,7 +45,6 @@ const anecdoteSlice = createSlice({
 
       return state
         .map(anecdote => anecdote.id !== id ? anecdote : changedAnecdote)
-        .sort((a, b) => b.votes - a.votes)
     }
   }
 })
