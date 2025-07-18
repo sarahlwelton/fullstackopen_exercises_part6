@@ -42,7 +42,7 @@ export const vote = (id) => {
     const newAnecdote = await anecdoteService.update(id, changedAnecdote)
     
     const updatedAnecdotes = anecdotes
-      .map(anecdote => anecdote.id !== id ? anecdote : changedAnecdote)
+      .map(anecdote => anecdote.id !== id ? anecdote : newAnecdote)
     dispatch(setAnecdotes(updatedAnecdotes))
   }
 }
