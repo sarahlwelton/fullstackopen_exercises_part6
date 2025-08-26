@@ -17,7 +17,13 @@ const AnecdoteForm = () => {
       setTimeout(() => {
         dispatch({type: 'CLEAR'})
       }, 5000)
-    } 
+    },
+    onError: (error) => {
+      dispatch({type: 'ERROR', payload: { error } })
+      setTimeout(() => {
+        dispatch({type: 'CLEAR'})
+      }, 5000)
+    }
   })
 
   const addAnecdote = async (event) => {
